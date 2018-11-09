@@ -48,11 +48,13 @@ public class PredictModel {
 		this.result = result;
 	}
 
-	public Integer getTeam2() {
+	
+
+	public String getTeam2() {
 		return team2;
 	}
 
-	public void setTeam2(Integer team2) {
+	public void setTeam2(String team2) {
 		this.team2 = team2;
 	}
 
