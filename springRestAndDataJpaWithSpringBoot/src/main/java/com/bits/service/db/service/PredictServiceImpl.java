@@ -2,14 +2,22 @@ package com.bits.service.db.service;
 
 import java.util.List;
 
-import com.bits.service.db.controller.model.PredictModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.bits.service.db.model.PredictModel;
+import com.bits.service.db.repo.PredictRepository;
+@Service
 public class PredictServiceImpl implements PredictService {
 
+	@Autowired
+	private PredictRepository predictrepository;
 	@Override
 	public List<PredictModel> retrievePredictModels() {
+	
+	return	predictrepository.findAll();
 		// TODO Auto-generated method stub
-		return null;
+		//return null;
 	}
 
 	@Override
@@ -19,8 +27,9 @@ public class PredictServiceImpl implements PredictService {
 	}
 
 	@Override
-	public void savePredictModel(PredictModel PredictModel) {
+	public void savePredictModel(PredictModel predictModel) {
 		// TODO Auto-generated method stub
+		predictrepository.save(predictModel);
 		
 	}
 
@@ -31,8 +40,10 @@ public class PredictServiceImpl implements PredictService {
 	}
 
 	@Override
-	public void updatePredictModel(PredictModel PredictModel) {
+	public void updatePredictModel(PredictModel predictModel) {
 		// TODO Auto-generated method stub
+		
+		predictrepository.save(predictModel);
 		
 	}
 	

@@ -4,7 +4,7 @@ package com.bits.service.db.service;
 
 import java.util.List;
 
-import com.bits.service.db.controller.model.PredictModel;
+import com.bits.service.db.model.PredictModel;
 
 public interface PredictService {
 	

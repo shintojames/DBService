@@ -1,4 +1,4 @@
-package com.bits.service.db.controller.model;
+package com.bits.service.db.model;
 
 import java.util.Date;
 

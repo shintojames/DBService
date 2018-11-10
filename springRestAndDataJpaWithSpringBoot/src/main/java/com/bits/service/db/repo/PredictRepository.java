@@ -1,8 +1,8 @@
-package com.bits.service.db.service.repo;
+package com.bits.service.db.repo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bits.service.db.controller.model.PredictModel;
+import com.bits.service.db.model.PredictModel;
 
 //import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
 @Repository
