@@ -20,8 +20,7 @@ import com.bits.service.db.service.PredictService;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class PredictionController {
-	@Autowired
-	 private PredictRepository predictRepository;
+
 	 @Autowired
 	 private PredictService predictservice;
 	 

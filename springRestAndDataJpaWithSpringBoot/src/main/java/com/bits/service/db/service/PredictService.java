@@ -4,8 +4,10 @@ package com.bits.service.db.service;
 
 import java.util.List;
 
-import com.bits.service.db.model.PredictModel;
+import org.springframework.stereotype.Service;
 
+import com.bits.service.db.model.PredictModel;
+@Service
 public interface PredictService {
 	
 	 public List<PredictModel> retrievePredictModels();	
