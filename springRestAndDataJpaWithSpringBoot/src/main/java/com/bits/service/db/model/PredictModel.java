@@ -14,15 +14,17 @@ import javax.persistence.TemporalType;
 @Table(name="PREDICT")
 public class PredictModel {
 	 
-	 @Id
-	 @GeneratedValue(strategy= GenerationType.IDENTITY)
-	 private Long position;
+
 	 
 	 @Column(name="TEAM1")
 	 private String team1;
 	 
 	 @Column(name="TEAM2")
 	 private String team2;
+	 
+	 @Id
+	 @GeneratedValue(strategy= GenerationType.IDENTITY)
+	 private Long position;
 	 
 	 @Temporal(TemporalType.DATE)
 	 @Column(name="Date")
