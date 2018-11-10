@@ -3,6 +3,7 @@ package com.bits.service.db.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bits.service.db.model.PredictModel;
 import com.bits.service.db.repo.PredictRepository;

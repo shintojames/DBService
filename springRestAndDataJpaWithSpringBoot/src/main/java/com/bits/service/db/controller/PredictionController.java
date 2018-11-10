@@ -18,17 +18,22 @@ import com.bits.service.db.service.PredictService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+
 public class PredictionController {
 
 	 @Autowired
 	 private PredictService predictservice;
 	 
 	@CrossOrigin(origins = "http://localhost:4200")
-	@PostMapping("/SavePredict")
+	@PostMapping("/api/SavePredict")
 	 public void saveEmployee(PredictModel predictModel){
 		//predictRepository.save(predictModel);
+		System.out.println("PredictModel Inserting"+predictModel.getTeam1());
+		System.out.println("PredictModel Inserting"+predictModel.getTeam2());
+		System.out.println("PredictModel Inserting"+predictModel.getDate());
+	//System.out.println("PredictModel"+predictModel.getTeam1());
 		predictservice.savePredictModel(predictModel);
+		
 	  System.out.println("Employee Saved Successfully");
 	 }
 	
