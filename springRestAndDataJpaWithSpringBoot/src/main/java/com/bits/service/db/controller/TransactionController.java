@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bits.service.db.model.UserModel;
+import com.bits.service.db.model.UserScoreModel;
 import com.bits.service.db.model.UserPredictModel;
 import com.bits.service.db.service.UserPredictService;
-import com.bits.service.db.service.UserService;
+import com.bits.service.db.service.UserScoreService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
