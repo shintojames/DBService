@@ -3,6 +3,7 @@ package com.bits.service.db.service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import com.bits.service.db.model.UserPredictModel;
 public interface UserPredictService {
 	
 	 public List<UserPredictModel> retrieveUserPredictModels();	 
-	 public UserPredictModel getUserPredictModel(Long userPredictModelId);
+	 public Optional<UserPredictModel>  getUserPredictModel(Long userPredictModelId);
 	 public UserPredictModel getUserPredictModelByGameId(Long gameId);
 	 public UserPredictModel getUserPredictModelByUserId(Long userId);
 	 public void saveUserPredictModel(UserPredictModel userPredictModel);

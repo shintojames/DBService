@@ -1,6 +1,7 @@
 package com.bits.service.db.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,9 +22,9 @@ public class UserPredictServiceImpl implements UserPredictService{
 	}
 
 	@Override
-	public UserPredictModel getUserPredictModel(Long userPredictModelId) {
+	public Optional<UserPredictModel> getUserPredictModel(Long userPredictModelId) {
 		// TODO Auto-generated method stub
-		return null;
+	return userPredictRepo.findById(userPredictModelId);
 	}
 
 	@Override

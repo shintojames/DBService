@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bits.service.db.model.PredictModel;
@@ -25,8 +26,8 @@ public class PredictionController {
 	 private PredictService predictservice;
 	 
 	@CrossOrigin(origins = "http://localhost:4200")
-	@PostMapping("/api/SavePredict")
-	 public void saveEmployee(PredictModel predictModel){
+	@PostMapping("/api/SavePredict" )
+	 public void saveEmployee(@RequestBody PredictModel predictModel){
 		//predictRepository.save(predictModel);
 		System.out.println("PredictModel Inserting"+predictModel.getTeam1());
 		System.out.println("PredictModel Inserting"+predictModel.getTeam2());
@@ -47,8 +48,8 @@ public class PredictionController {
 	 }
 
 	@CrossOrigin(origins = "http://localhost:4200")
-	@PostMapping("/api/predictList")
-	 public void  updateEmployees(PredictModel predictModel) {
+	@PostMapping("/api/UpatepredictList")
+	 public void  updateEmployees(@RequestBody PredictModel predictModel) {
 	  predictservice.updatePredictModel(predictModel);;
 	  System.out.println("Employee Update Call");
 	 }
