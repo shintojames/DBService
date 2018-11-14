@@ -1,11 +1,13 @@
 package com.bits.service.db.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,9 +32,18 @@ public class TransactionController {
 	 }
 	
 	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping("/api/userpredictList")
+	@GetMapping("/api/userpredictListAll")
 	 public List<UserPredictModel> GetUserPredictions() {
 		List<UserPredictModel> userPredictModel = userPredService.retrieveUserPredictModels();
+		System.out.println("User Prediction get call");
+	  return userPredictModel;
+	 }
+	
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/api/userpredictList/{userId}")
+	 public List<UserPredictModel> getUserPredictionsById(@PathVariable String userId) {
+		List<UserPredictModel> userPredictModel = userPredService.getUserPredictModel(userId);
 		System.out.println("User Prediction get call");
 	  return userPredictModel;
 	 }

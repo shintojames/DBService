@@ -22,9 +22,9 @@ public class UserPredictServiceImpl implements UserPredictService{
 	}
 
 	@Override
-	public Optional<UserPredictModel> getUserPredictModel(Long userPredictModelId) {
+	public List<UserPredictModel> getUserPredictModel(String userPredictModelId) {
 		// TODO Auto-generated method stub
-	return userPredictRepo.findById(userPredictModelId);
+	return userPredictRepo.findByUserModelId(userPredictModelId);
 	}
 
 	@Override

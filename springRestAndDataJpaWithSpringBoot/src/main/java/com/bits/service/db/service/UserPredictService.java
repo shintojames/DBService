@@ -12,7 +12,7 @@ import com.bits.service.db.model.UserPredictModel;
 public interface UserPredictService {
 	
 	 public List<UserPredictModel> retrieveUserPredictModels();	 
-	 public Optional<UserPredictModel>  getUserPredictModel(Long userPredictModelId);
+	 public List<UserPredictModel>  getUserPredictModel(String userPredictModelId);
 	 public UserPredictModel getUserPredictModelByGameId(Long gameId);
 	 public UserPredictModel getUserPredictModelByUserId(Long userId);
 	 public void saveUserPredictModel(UserPredictModel userPredictModel);

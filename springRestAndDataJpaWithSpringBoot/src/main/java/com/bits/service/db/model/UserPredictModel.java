@@ -1,5 +1,7 @@
 package com.bits.service.db.model;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,17 +9,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="USER_PREDICT_MODEL")
 public class UserPredictModel {
 	 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	//@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name = "ID")
-	private Long userPredictId;
+	private String userPredictId;
 	
 	@Column(name = "USERID")
-	private Long userId;
+	private String userId;
 	
 	@Column(name="GAMEID")
 	private Long gameId;
@@ -25,18 +28,32 @@ public class UserPredictModel {
 	@Column(name="PREDICTION")
 	private String prediction;
 	
-	@Column(name="POINTS")
-	private Integer point;
+	
+	@Column(name="DATE")
+    private String date;
+	
+	@Column(name="RESULT")
+	private String result;
+	
+	@Column(name="TEAM1")
+	private String team1;
+	
+	@Column(name="TEAM2")
+	private String team2;
 
-	public Long getUserPredictId() {
+	public String getUserPredictId() {
 		return userPredictId;
 	}
 
-	public Long getUserId() {
+	public void setUserPredictId(String userPredictId) {
+		this.userPredictId = userPredictId;
+	}
+
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
@@ -56,18 +73,38 @@ public class UserPredictModel {
 		this.prediction = prediction;
 	}
 
-	public Integer getPoint() {
-		return point;
+	public String getDate() {
+		return date;
 	}
 
-	public void setPoint(Integer point) {
-		this.point = point;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
-	public void setUserPredictId(Long userPredictId) {
-		this.userPredictId = userPredictId;
+	public String getResult() {
+		return result;
 	}
 
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public String getTeam1() {
+		return team1;
+	}
+
+	public void setTeam1(String team1) {
+		this.team1 = team1;
+	}
+
+	public String getTeam2() {
+		return team2;
+	}
+
+	public void setTeam2(String team2) {
+		this.team2 = team2;
+	}
 	
+
 	 
 }

@@ -1,6 +1,9 @@
 package com.bits.service.db.controller;
 
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,7 +30,7 @@ public class PredictionController {
 	 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/api/SavePredict" )
-	 public void saveEmployee(@RequestBody PredictModel predictModel){
+	 public void savePredict(@RequestBody PredictModel predictModel){
 		//predictRepository.save(predictModel);
 		System.out.println("PredictModel Inserting"+predictModel.getTeam1());
 		System.out.println("PredictModel Inserting"+predictModel.getTeam2());
@@ -40,11 +43,23 @@ public class PredictionController {
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/api/predictList")
-	 public List<PredictModel> getEmployees() {
-		List<PredictModel> employees = predictservice.retrievePredictModels();
+	 public List<PredictModel> getPredict() {
+		List<PredictModel> predicts = predictservice.retrievePredictModels();
 		//List<PredictModel> employees = predictRepository.findAll();
 	  System.out.println("Employee Get Call");
-	  return employees;
+	  return predicts;
+	 }
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/api/predictListBydate")
+	 public List<PredictModel> getPredictbyDate() {
+		//List<PredictModel> predicts = predictservice.retrievePredictModels();
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate localDate = LocalDate.now();
+		System.out.println( "Sample Date"+dtf.format(localDate));
+		List<PredictModel> predicts = predictservice.getPredictByDate(dtf.format(localDate));
+	   System.out.println("Employee Get Call");
+	   return predicts;
 	 }
 
 	@CrossOrigin(origins = "http://localhost:4200")

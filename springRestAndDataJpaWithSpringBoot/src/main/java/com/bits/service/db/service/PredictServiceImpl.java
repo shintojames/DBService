@@ -1,5 +1,6 @@
 package com.bits.service.db.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,12 @@ public class PredictServiceImpl implements PredictService {
 		
 		predictrepository.save(predictModel);
 		
+	}
+
+	@Override
+	public List<PredictModel> getPredictByDate(String date) {
+		// TODO Auto-generated method stub
+		return predictrepository.findByUserModelId(date);
 	}
 	
 
