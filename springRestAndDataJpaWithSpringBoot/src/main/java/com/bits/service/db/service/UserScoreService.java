@@ -11,7 +11,7 @@ import com.bits.service.db.model.UserScoreModel;
 public interface UserScoreService {
 	
 	 public List<UserScoreModel> retrieveUserModels();	
-	 public Optional<UserScoreModel>  getUserModel(Long UserModelId);
+	 public List<UserScoreModel>  getUserModel(String UserModelId);
 	 public void saveUserModel(UserScoreModel UserModel);
 	 public void deleteUserModel(Long UserModelId);
 	 public void updateUserModel(UserScoreModel UserModel);

@@ -27,9 +27,9 @@ public class UserScoreServiceImpl implements UserScoreService{
 	 }
 
 	@Override
-	public Optional<UserScoreModel> getUserModel(Long UserModelId) {
+	public List<UserScoreModel> getUserModel(String UserModelId) {
 		// TODO Auto-generated method stub
-		return userServie.findById(UserModelId);
+		return userServie.findByUserModelId(UserModelId);
 	//	return null;
 	}
 

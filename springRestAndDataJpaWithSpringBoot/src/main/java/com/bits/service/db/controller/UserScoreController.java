@@ -30,11 +30,11 @@ public class UserScoreController {
 	 }
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/api/getUser/{userId}")
-	 public Optional<UserScoreModel> getUser(@PathVariable Long userId) {
-		Optional<UserScoreModel> userModel = userservie.getUserModel(userId);
+	 public UserScoreModel getUser(@PathVariable String userId) {
+		List <UserScoreModel> userModel = userservie.getUserModel(userId);
 		//List<PredictModel> employees = predictRepository.findAll();
 	  System.out.println("User Get Call");
-	  return userModel;
+	  return userModel.get(0);
 	 }
 	
 	@CrossOrigin(origins = "http://localhost:4200")
