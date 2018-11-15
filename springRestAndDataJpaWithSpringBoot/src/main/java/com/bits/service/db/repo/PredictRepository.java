@@ -13,6 +13,6 @@ import com.bits.service.db.model.UserPredictModel;
 @Repository
 public interface  PredictRepository extends JpaRepository<PredictModel,Long>{
 
-	 @Query(value = "SELECT * FROM USER_PREDICT_MODEL WHERE DATE > = ?1", nativeQuery = true)
-		List<PredictModel> findByUserModelId(String sysdate);
+	@Query(value = "SELECT * FROM PREDICT WHERE DATE >=CURDATE()", nativeQuery = true)
+		List<PredictModel> findByUserModelId();
 }

@@ -51,7 +51,7 @@ public class PredictServiceImpl implements PredictService {
 	@Override
 	public List<PredictModel> getPredictByDate(String date) {
 		// TODO Auto-generated method stub
-		return predictrepository.findByUserModelId(date);
+		return predictrepository.findByUserModelId();
 	}
 	
 
